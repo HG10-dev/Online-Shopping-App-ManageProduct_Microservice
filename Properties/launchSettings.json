@@ -16,7 +16,10 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7264;http://localhost:5059",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ProductCollectionName": "shoppingAppProducts",
+        "DatabaseName": "shoppingAppDb",
+        "ConnectionString": "mongodb+srv://gautamhimangshu:R5q8WNuujYgYgEk6@cluster0.hxgjukq.mongodb.net/"
       }
     },
     "IIS Express": {
@@ -24,7 +27,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ProductCollectionName": "shoppingAppProducts",
+        "DatabaseName": "shoppingAppDb",
+        "ConnectionString": "mongodb+srv://gautamhimangshu:R5q8WNuujYgYgEk6@cluster0.hxgjukq.mongodb.net/"
       }
     }
   }

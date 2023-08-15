@@ -7,12 +7,19 @@ using MongoDB.Driver;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-var MyCorsPolicy = "myCorsPolicy";
+//var MyCorsPolicy = "myCorsPolicy";
 
 // Add services to the container.
 
-builder.Services.Configure<ProductDatabaseSettings>(
-    builder.Configuration.GetSection(nameof(ProductDatabaseSettings)));
+/*builder.Services.Configure<ProductDatabaseSettings>(
+    builder.Configuration.GetSection(nameof(ProductDatabaseSettings)));*/
+
+builder.Services.Configure<ProductDatabaseSettings>(options =>
+{
+    options.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
+    options.DatabaseName = Environment.GetEnvironmentVariable("DatabaseName");
+    options.ProductCollectionName = Environment.GetEnvironmentVariable("UserCollectionName");
+});
 
 builder.Services.AddSingleton<IProductDatabaseSettings>(sp =>
     sp.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
