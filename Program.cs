@@ -18,7 +18,7 @@ builder.Services.Configure<ProductDatabaseSettings>(options =>
 {
     options.ConnectionString = Environment.GetEnvironmentVariable("ConnectionString");
     options.DatabaseName = Environment.GetEnvironmentVariable("DatabaseName");
-    options.ProductCollectionName = Environment.GetEnvironmentVariable("UserCollectionName");
+    options.ProductCollectionName = Environment.GetEnvironmentVariable("ProductCollectionName");
 });
 
 builder.Services.AddSingleton<IProductDatabaseSettings>(sp =>
